@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bronson & Brown English Academy BBEA</title>
+
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #003366;
+    }
+
+    header {
+      background: rgba(0, 51, 102, 0.97);
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: white;
+      margin-left: 10px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #ffd700;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 25px;
+      background: rgba(0, 51, 102, 0.95);
+      border-radius: 5px;
+      min-width: 180px;
+      padding: 10px;
+      z-index: 999;
+    }
+
+    .dropdown-content p {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .notice-bar {
+      background: #ffd700;
+      color: #003366;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .notice-text {
+      display: inline-block;
+      animation: scroll 15s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://iili.io/KbNlCWG.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #f2f2f2;
+    }
+
+    #forms {
+      padding: 60px 5%;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    #forms h2 {
+      font-size: 28px;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .form-card {
+      background: #f5f7fa;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .form-card:hover {
+      transform: scale(1.03);
+    }
+
+    .form-card h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #003366;
+    }
+
+    .form-card a {
+      display: inline-block;
+      background: #ffd700;
+      color: #003366;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .form-card a:hover {
+      background: #ffcc00;
+      box-shadow: 0 0 10px rgba(255,215,0,0.7);
+    }
+
+    .form-details {
+      background: #f8f9fc;
+      padding: 50px 8%;
+      border-top: 2px solid #e0e0e0;
+    }
+
+    .form-details h2 {
+      color: #003366;
+      margin-bottom: 15px;
+    }
+
+    .form-details p {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
+    }
+
+    footer {
+      text-align: center;
+      background: rgba(0, 51, 102, 0.97);
+      color: white;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* New Badge Animation */
+    .new-badge {
+      display: inline-block;
+      background: #ff0000;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 3px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @media(max-width: 768px){
+      header h1 {
+        font-size: 18px;
+      }
+      .hero h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="https://iili.io/KbjXelj.jpg" alt="School Logo">
+      <h1>Bronson & Brown English Academy | BBEA</h1>
+    </div>
+
+    <nav>
+      <div class="dropdown">
+        <a href="#">Welcome ▼</a>
+        <div class="dropdown-content">
+          <p>Welcome to Bronson & Brown English Academy!</p>
+        </div>
+      </div>
+
+      <a href="#forms">Forms</a>
+      <a href="#details">Form Information</a>
+
+      <div class="dropdown">
+        <a href="#">Help ▼</a>
+        <div class="dropdown-content">
+          <p>Contact us or visit the help desk for support.</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="notice-bar">
+    <div class="notice-text">
+      📢 Latest Update: Half-Yearly Report Card Submission Form is now open for all staff members!
+    </div>
+  </div>
+
+  <section class="hero">
+    <h2>Welcome to Bronson & Brown English Academy Forms Portal</h2>
+    <p>Streamlined access to official forms</p>
+  </section>
+
+  <section id="forms">
+    <h2>Available Forms</h2>
+
+    <div class="form-grid">
+      <div class="form-card">
+        <h3>Collins Digisuit Usage Record</h3>
+        <a href="https://forms.gle/wdhFZvfC6cjMNATk7" target="_blank">
+          Open Form
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h3>Leave Application</h3>
+        <a href="https://forms.gle/DKWdTyDdcNWQvhsMA" target="_blank">
+          Open Form <span class="new-badge">NEW</span>
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h3>Computer Lab Usage Form</h3>
+        <a href="https://forms.gle/w5NGm7iGyjWkDTYUA" target="_blank">
+          Open Form
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h3>Half-Yearly Exam Question Paper Submission</h3>
+        <a href="https://forms.gle/HRiPT5SSHy3hbP2u9" target="_blank">
+          Open Form
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h3>CPU Issue Reporting Form</h3>
+        <a href="https://forms.gle/1VJJ7ZDPnV754ujj6" target="_blank">
+          Open Form
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h3>Half-Yearly Exam Report Card Submission</h3>
+        <a href="https://forms.gle/5mYwbTcXaocHRLno6" target="_blank">
+          Open Form <span class="new-badge">NEW</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-details" id="details">
+    <h2>Important Form info</h2>
+    <p><em>Please ensure that each form is completed properly.</em></p>
+    <hr>
+
+    <p><strong>Collins Digisuit Usage Record</strong><br>
+      Used to submit class details held in the lab.
+    </p>
+
+    <p><strong>Computer Lab Usage Form</strong><br>
+      Used while entering and leaving the lab.
+    </p>
+
+    <p><strong>Half-Yearly Exam Question Paper Submission Form</strong><br>
+      Used for uploading Half-Yearly exam question papers (docx only).
+    </p>
+
+    <p><strong>CPU Issues Reporting Form</strong><br>
+      Used to report technical problems.
+    </p>
+
+    <p><strong>Digital Leave Application Form</strong><br>
+      All leave must be submitted through the form only.
+    </p>
+  </section>
+
+  <footer>
+    <p><strong>Help Desk</strong> | <strong>Contact Us</strong></p>
+    <p>Email: info@bronsonbrownacademy.com | Helpdesk: +91 60001 54387</p>
+    <p>Developed By: BBEA IT Department</p>
+    <p>&copy; 2025 Bronson & Brown English Academy. All rights reserved.</p>
+  </footer>
+</body>
+</html>
