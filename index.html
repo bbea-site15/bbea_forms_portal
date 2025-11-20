@@ -110,12 +110,85 @@
     }
 
     .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-      url('https://iili.io/KbNlCWG.jpg') no-repeat center center/cover;
-      color: #fff;
-    }
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bgFade 15s infinite;
+}
+
+/* Fade-in fade-out slideshow */
+@keyframes bgFade {
+
+  0% {
+    opacity: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://iili.io/KbNlCWG.jpg');
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://iili.io/f2CrSpV.jpg');
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://iili.io/f2CsMWN.jpg');
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://iili.io/f2CLaBS.jpg');
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://iili.io/f2COBTu.jpg');
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://iili.io/f2CmnEl.jpg');
+  }
 
     .hero h2 {
       font-size: 36px;
